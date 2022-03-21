@@ -1,0 +1,26 @@
+{
+  "name": "monorepo-node-angular-template",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "container-build": "docker build --pull -t denoapp -f ./.containers/apps/api/Dockerfile.prod .",
+    "serve": "docker compose -f ./.containers/apps/api/docker-compose.prod.yml up",
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint --parallel",
+    "fmt": "turbo run fmt --parallel"
+  },
+  "author": "Michael Tyson",
+  "license": "ISC",
+  "devDependencies": {
+    "turbo": "^1.1.6"
+  },
+  "volta": {
+    "node": "16.14.0"
+  },
+  "packageManager": "yarn@1.22.17"
+}
