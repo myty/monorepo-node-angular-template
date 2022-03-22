@@ -12,7 +12,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint --parallel",
-    "fmt": "turbo run fmt --parallel"
+    "fmt": "turbo run fmt --parallel",
+    "prisma": "yarn workspace api prisma"
   },
   "author": "Michael Tyson",
   "license": "ISC",
@@ -20,7 +21,7 @@
     "turbo": "^1.1.6"
   },
   "volta": {
-    "node": "16.14.0"
+    "node": "16.14.2"
   },
   "packageManager": "yarn@1.22.18"
 }

@@ -3,5 +3,38 @@
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true
-    }
+    },
+
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "akamud.vscode-caniuse",
+        "andrewmcodes.tailwindcss-extension-pack",
+        "Angular.ng-template",
+        "austenc.tailwind-docs",
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.path-intellisense",
+        "codezombiech.gitignore",
+        "csstools.postcss",
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "hashhar.gitattributes",
+        "heybourn.headwind",
+        "johnpapa.pwa-tools",
+        "macieklad.tailwind-sass-syntax",
+        "mhutchie.git-graph",
+        "mrmlnc.vscode-csscomb",
+        "mrmlnc.vscode-scss",
+        "ms-vscode.typescript-javascript-grammar",
+        "natewallace.angular2-inline",
+        "naumovs.color-highlight",
+        "oouo-diogo-perdigao.docthis",
+        "pmneo.tsimporter",
+        "prisma.prisma",
+        "redhat.vscode-yaml",
+        "shardulm94.trailing-spaces",
+        "sibiraj-s.vscode-scss-formatter",
+        "xabikos.JavaScriptSnippets"
+    ]
 }
