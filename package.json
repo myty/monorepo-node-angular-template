@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "container-build": "docker build --pull -t denoapp -f ./.containers/apps/api/Dockerfile.prod .",
+    "container-build": "docker build --pull -t denoapp -f ./.containers/Dockerfile.api.prod .",
     "serve": "docker compose -f ./.containers/apps/api/docker-compose.prod.yml up",
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
@@ -22,5 +22,5 @@
   "volta": {
     "node": "16.14.0"
   },
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.18"
 }
