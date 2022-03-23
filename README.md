@@ -2,9 +2,24 @@
 
 ## Prerequisites
 
-- VS Code
+- Node.js (v16)
 - Docker
 
 ## Getting Started
 
-This template is geared towards VS Code using devcontainers. When opening the project, VS Code will offer to open in a Dev container. Click the button to switch into the container.  Once it is finished loading, open the integrated terminal and type `yarn dev`.
+1. Make sure you have the prerequisites installed.
+2. Run: `npm install`
+3. Run: `npm run dev`
+
+## Project Structure
+
+This is a monorepo utiizing Docker, Turborepo, Feather.js, Prisma, Angular, and Tailwindcss:
+
+- apps (executable applications)
+  - api (Feather.js, Prisma) - depends upon mysql Docker container
+  - web (Angular, Tailwindcss)
+- packages (shared libraries)
+  - config
+  - scripts
+  - tsconfig
+  - ui

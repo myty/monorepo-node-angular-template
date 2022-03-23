@@ -13,7 +13,7 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint --parallel",
     "fmt": "turbo run fmt --parallel",
-    "prisma": "yarn workspace api prisma"
+    "prisma": "npm run prisma --workspace=api"
   },
   "author": "Michael Tyson",
   "license": "ISC",
