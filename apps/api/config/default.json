@@ -40,5 +40,5 @@
       }
     }
   },
-  "mysql": "mysql://root:root_password@db:3306/db"
+  "mysql": "mysql://root:root_password@localhost:3306/db"
 }

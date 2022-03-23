@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: ../../../
-      dockerfile: ./.containers/apps/api/Dockerfile.production
+      dockerfile: ./.containers/Dockerfile.production
     environment:
       MYSQL_DATABASE: deno_db
       MYSQL_USERNAME: deno_user
