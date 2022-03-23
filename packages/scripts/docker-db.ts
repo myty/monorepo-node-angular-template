@@ -53,15 +53,23 @@ const getContainerList = async (): Promise<Array<ContainerListItem>> =>
       "--format='{{json .}}'",
     ])
       .stdout?.on("data", (chunk: Buffer) => {
-        const chunkedString = chunk.toString();
-        const jsonString = chunkedString.substring(1, chunkedString.length - 2);
+        const jsonLines = arrayOfLines(chunk)
+          .map(trimOuterSingleQuotes)
+          .filter((str) => (str?.trim().length ?? 0) > 0)
+          .map((jsonString) => JSON.parse(jsonString));
 
-        parsedContainerList.push(JSON.parse(jsonString));
+        parsedContainerList.push(...jsonLines);
       })
       .on("close", () => {
         resolve(parsedContainerList);
       });
   });
+
+const arrayOfLines = (chunk: Buffer): Array<string> =>
+  chunk.toString().split(/\r?\n/);
+
+const trimOuterSingleQuotes = (str: string): string =>
+  str?.trim().replace(/^'|'$/g, "");
 
 const runSqlDockerContainer = async (containerName: string): Promise<void> => {
   const dockerContainer = await findDockerContainer(containerName);
@@ -93,7 +101,7 @@ const waitForLogs = async (
   try {
     const containerLogs = spawn(
       "docker",
-      ["logs", containerName, "-f", "--since=10s"],
+      ["logs", containerName],
       {
         shell: false,
       },

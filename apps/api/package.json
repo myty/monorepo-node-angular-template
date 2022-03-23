@@ -14,7 +14,7 @@
   },
   "scripts": {
     "db:start": "npx ts-node ../../node_modules/scripts/docker-db.ts db -s -n mysql-db",
-    "db:migrate": "npm run db:start && prisma migrate deploy",
+    "db:migrate": "npm run db:start && prisma generate && prisma migrate deploy",
     "test": "npm run lint && npm run compile && npm run mocha",
     "lint": "eslint src/. test/. --config .eslintrc.json --ext .ts --fix",
     "dev": "npm run db:migrate && ts-node-dev --no-notify src/",
